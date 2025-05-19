@@ -25,7 +25,7 @@ generate_btn = st.button("🎨 Générer mon affiche")
 
 if generate_btn and name and profile_pic:
     # Charger image de fond depuis le répertoire local
-    image_path = os.path.join(os.path.dirname(__file__), "Blue, Black and Red Illustrative Modern Music Festival Promotion Flyer (2).png")
+    image_path = os.path.join(os.path.dirname(__file__), "Blue, Black and Red Illustrative Modern Music Festival Promotion Flyer.png")
     background = Image.open(image_path).convert("RGBA")
     width, height = background.size
     template = background.copy()
