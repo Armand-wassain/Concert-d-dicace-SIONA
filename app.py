@@ -24,7 +24,7 @@ generate_btn = st.button("🎨 Générer mon affiche")
 
 if generate_btn and name and profile_pic:
     # Charger image de fond
-    background = Image.open("Blue, Black and Red Illustrative Modern Music Festival Promotion Flyer (2).png").convert("RGBA")
+    background = Image.open("Blue, Black and Red Illustrative Modern Music Festival Promotion Flyer.png").convert("RGBA")
     width, height = background.size
     template = background.copy()
 
