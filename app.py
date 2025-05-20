@@ -31,7 +31,7 @@ if generate_btn and name and profile_pic:
     template = background.copy()
 
     # Préparation de la photo de profil
-    profile_size = 380
+    profile_size = 680
     profile_img = Image.open(profile_pic).convert("RGB").resize((profile_size, profile_size))
     mask = Image.new('L', (profile_size, profile_size), 0)
     mask_draw = ImageDraw.Draw(mask)
@@ -42,7 +42,7 @@ if generate_btn and name and profile_pic:
 
     # Position de la photo
     pos_x = width - profile_size - 60
-    pos_y = 160
+    pos_y = 200
     template.paste(bordered_profile, (pos_x, pos_y), bordered_mask)
 
     # Ajouter nom + message
