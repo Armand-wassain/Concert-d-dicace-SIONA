@@ -31,7 +31,7 @@ if generate_btn and name and profile_pic:
     template = background.copy()
 
     # Préparation de la photo de profil
-    profile_size = 3000
+    profile_size = 1311
     profile_img = Image.open(profile_pic).convert("RGB").resize((profile_size, profile_size))
     mask = Image.new('L', (profile_size, profile_size), 0)
     mask_draw = ImageDraw.Draw(mask)
@@ -42,21 +42,21 @@ if generate_btn and name and profile_pic:
 
     # Position de la photo
     pos_x = width - profile_size - 60
-    pos_y = 220
+    pos_y = 240
     template.paste(bordered_profile, (pos_x, pos_y), bordered_mask)
 
     # Ajouter nom + message
     draw = ImageDraw.Draw(template)
     try:
         font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-        name_font = ImageFont.truetype(font_path, 64)
-        msg_font = ImageFont.truetype(font_path, 52)
+        name_font = ImageFont.truetype(font_path, 72)
+        msg_font = ImageFont.truetype(font_path, 58)
     except:
         name_font = msg_font = None
 
     name_x = pos_x + profile_size // 2
-    name_y = pos_y + profile_size + 55
-    msg_y = name_y + 70
+    name_y = pos_y + profile_size + 70
+    msg_y = name_y + 80
 
     draw.text((name_x, name_y), name, font=name_font, fill="white", anchor="mm")
     draw.text((name_x, msg_y), "Je serai là !", font=msg_font, fill="white", anchor="mm")
