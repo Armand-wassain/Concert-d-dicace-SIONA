@@ -10,10 +10,10 @@ st.set_page_config(page_title="Concert Dédicace - Chorale Siona", layout="cente
 st.title("🎶 Générateur d'Affiche - Concert Dédicace 2025")
 
 st.markdown("""
-Participez au **Concert Dédicace** du *Premier Album de la Chorale Siona* 🎤
+Participez au **Concert Dédicace** du *Premier Album de la Chorale Siona.* 🎤
 
-📅 **Sabbat 31 Mai 2025 à partir de 15h00**  
-📍 **Église Adventiste du Septième Jour de Garoua-Centre**
+📅 **Sabbat 31 Mai 2025 à partir de 16h00**  
+📍 **Église Adventiste du Septième Jour de Garoua-Centre, Face Daoula Hôtel.**
 
 Veuillez remplir les champs ci-dessous pour générer automatiquement votre affiche personnalisée.
 """)
