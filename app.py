@@ -38,13 +38,23 @@ if generate_btn and name and profile_pic:
     mask_draw.ellipse((0, 0, profile_size, profile_size), fill=255)
 
     # ✅ Bordure blanche large
-    bordered_profile = ImageOps.expand(profile_img, border=40, fill='white')
-    bordered_mask = ImageOps.expand(mask, border=40, fill=255)
+    # Ajouter un cercle plus grand blanc en dessous comme vraie bordure
+border_size = 40
+big_size = profile_size + 2 * border_size
+
+circle_border = Image.new("RGB", (big_size, big_size), "white")
+circle_mask = Image.new("L", (big_size, big_size), 0)
+draw_mask = ImageDraw.Draw(circle_mask)
+draw_mask.ellipse((0, 0, big_size, big_size), fill=255)
+
+# Coller la photo dans le cercle blanc
+circle_border.paste(profile_img, (border_size, border_size), mask)
+
 
     # ✅ Position bien placée
     pos_x = width - profile_size - 80
     pos_y = 240
-    template.paste(bordered_profile, (pos_x, pos_y), bordered_mask)
+    template.paste(circle_border, (pos_x, pos_y), circle_mask)
 
     # ✅ Texte clair et espacé
     draw = ImageDraw.Draw(template)
