@@ -32,11 +32,11 @@ width, height = background.size
 template = background.copy()
 
     # Préparation de la photo de profil
-    profile_size = 380
-    profile_img = Image.open(profile_pic).convert("RGB").resize((profile_size, profile_size))
-    mask = Image.new('L', (profile_size, profile_size), 0)
-    mask_draw = ImageDraw.Draw(mask)
-    mask_draw.ellipse((0, 0, profile_size, profile_size), fill=255)
+profile_size = 380
+profile_img = Image.open(profile_pic).convert("RGB").resize((profile_size, profile_size))
+mask = Image.new('L', (profile_size, profile_size), 0)
+mask_draw = ImageDraw.Draw(mask)
+mask_draw.ellipse((0, 0, profile_size, profile_size), fill=255)
 
     bordered_profile = ImageOps.expand(profile_img, border=12, fill='white')
     bordered_mask = ImageOps.expand(mask, border=12, fill=255)
