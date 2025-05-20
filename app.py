@@ -12,10 +12,10 @@ st.title("🎶 Générateur d'Affiche - Concert Dédicace 2025")
 st.markdown("""
 Participez au **Concert Dédicace** du *Premier Album de la Chorale Siona* 🎤
 
-📅 **Sabbat 31 Mai 2025**  
-📍 **Église Adventiste du 7e Jour de Garoua-Centre**
+📅 **Sabbat 31 Mai 2025 à partir de 15h00**  
+📍 **Église Adventiste du Septième Jour de Garoua-Centre**
 
-Remplissez les champs ci-dessous pour générer automatiquement votre affiche personnalisée.
+Veuillez remplir les champs ci-dessous pour générer automatiquement votre affiche personnalisée.
 """)
 
 # Entrées utilisateur
@@ -37,26 +37,26 @@ if generate_btn and name and profile_pic:
     mask_draw = ImageDraw.Draw(mask)
     mask_draw.ellipse((0, 0, profile_size, profile_size), fill=255)
 
-    bordered_profile = ImageOps.expand(profile_img, border=12, fill='white')
-    bordered_mask = ImageOps.expand(mask, border=12, fill=255)
+    bordered_profile = ImageOps.expand(profile_img, border=30, fill='white')
+    bordered_mask = ImageOps.expand(mask, border=30, fill=255)
 
     # Position de la photo
     pos_x = width - profile_size - 60
-    pos_y = 200
+    pos_y = 220
     template.paste(bordered_profile, (pos_x, pos_y), bordered_mask)
 
     # Ajouter nom + message
     draw = ImageDraw.Draw(template)
     try:
         font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-        name_font = ImageFont.truetype(font_path, 44)
-        msg_font = ImageFont.truetype(font_path, 36)
+        name_font = ImageFont.truetype(font_path, 64)
+        msg_font = ImageFont.truetype(font_path, 52)
     except:
         name_font = msg_font = None
 
     name_x = pos_x + profile_size // 2
-    name_y = pos_y + profile_size + 35
-    msg_y = name_y + 55
+    name_y = pos_y + profile_size + 55
+    msg_y = name_y + 70
 
     draw.text((name_x, name_y), name, font=name_font, fill="white", anchor="mm")
     draw.text((name_x, msg_y), "Je serai là !", font=msg_font, fill="white", anchor="mm")
