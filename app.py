@@ -71,5 +71,5 @@ output.seek(0)
 st.image(template, caption="Votre affiche personnalisée", use_column_width=True)
 st.download_button("📥 Télécharger l'affiche", data=output, file_name=f"affiche_siona_{uuid.uuid4().hex[:8]}.png", mime="image/png")
 
-    elif generate_btn:
+elif generate_btn:
     st.warning("Merci de remplir tous les champs (nom + photo) pour générer votre affiche.")
