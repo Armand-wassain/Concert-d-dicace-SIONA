@@ -67,7 +67,7 @@ if generate_btn and name and profile_pic:
     output.seek(0)
 
     # Affichage et téléchargement
-    st.image(template, caption="Votre affiche personnalisée", use_column_width=True)
+    st.image(template, caption="Votre affiche personnalisée", use_container_width=True)
     st.download_button("📥 Télécharger l'affiche", data=output, file_name=f"affiche_siona_{uuid.uuid4().hex[:8]}.png", mime="image/png")
 
 elif generate_btn:
