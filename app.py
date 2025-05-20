@@ -38,17 +38,17 @@ mask = Image.new('L', (profile_size, profile_size), 0)
 mask_draw = ImageDraw.Draw(mask)
 mask_draw.ellipse((0, 0, profile_size, profile_size), fill=255)
 
-    bordered_profile = ImageOps.expand(profile_img, border=12, fill='white')
-    bordered_mask = ImageOps.expand(mask, border=12, fill=255)
+bordered_profile = ImageOps.expand(profile_img, border=12, fill='white')
+bordered_mask = ImageOps.expand(mask, border=12, fill=255)
 
     # Position de la photo
-    pos_x = width - profile_size - 60
-    pos_y = 160
-    template.paste(bordered_profile, (pos_x, pos_y), bordered_mask)
+pos_x = width - profile_size - 60
+pos_y = 160
+template.paste(bordered_profile, (pos_x, pos_y), bordered_mask)
 
     # Ajouter nom + message
-    draw = ImageDraw.Draw(template)
-    try:
+draw = ImageDraw.Draw(template)
+try:
         font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
         name_font = ImageFont.truetype(font_path, 44)
         msg_font = ImageFont.truetype(font_path, 36)
