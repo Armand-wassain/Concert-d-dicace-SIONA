@@ -28,7 +28,7 @@ if generate_btn and name and profile_pic:
     image_path = os.path.join(os.path.dirname(__file__), "Blue, Black and Red Illustrative Modern Music Festival Promotion Flyer.png")
     image_path = os.path.join(os.path.dirname(__file__), "Blue, Black and Red Illustrative Modern Music Festival Promotion Flyer.png")
 background = Image.open(image_path).convert("RGBA")
-    width, height = background.size
+width, height = background.size
     template = background.copy()
 
     # Préparation de la photo de profil
